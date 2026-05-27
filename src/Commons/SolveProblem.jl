@@ -171,8 +171,8 @@ for (ntime,tn) in enumerate(time_step)
 
 
   println("solution time at time $tn")
-  println(time_solve)
-    @time GridapPETSc.GridapPETSc.gridap_petsc_gc()
+  println("Time step solve time: ", time_solve)
+  #GridapPETSc.GridapPETSc.gridap_petsc_gc() # Remove this GC to make GPU work
 
 update_ũ_vector!(ũ_vector,vec_um)
 
